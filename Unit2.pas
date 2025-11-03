@@ -12,6 +12,7 @@ type
     Button1: TButton;
     Button2: TButton;
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     FValorTotal: integer;
     FAliquota: double;
@@ -45,6 +46,16 @@ begin
   VisualizaMsg;
 end;
 
+procedure TForm2.Button2Click(Sender: TObject);
+var
+  lSoma: Integer;
+begin
+  lSoma := SomaValores(5,5);
+  Memo1.Clear;
+  Memo1.Lines.Add('==========soma==========');
+  Memo1.Lines.Add(lSoma.ToString)
+end;
+
 function TForm2.CalculaTributo: double;
 begin
   Result:= FAliquota * 0.1;
@@ -57,7 +68,7 @@ end;
 
 function TForm2.SomaValores(aValor1, aValor2: integer): integer;
 begin
-
+  Result:= aValor1 + aValor2;
 end;
 
 procedure TForm2.VisualizaMsg;
