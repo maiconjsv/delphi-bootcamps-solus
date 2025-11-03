@@ -14,12 +14,8 @@ type
     procedure Button1Click(Sender: TObject);
   private
     FValorTotal: integer;
-    FAliquota: double;
   public
     function CalculaValor: Integer;
-    function CalculaTributo: double;
-    procedure VisualizaMsg;
-    function SomaValores(aValor1, aValor2: integer):integer;
   end;
 
 var
@@ -30,39 +26,15 @@ implementation
 {$R *.dfm}
 
 procedure TForm2.Button1Click(Sender: TObject);
-var
-  lValor: integer;
-  FAliquotaFInal: double;
 begin
   FValorTotal := 100;
-  FAliquota:= 100;
-  lValor:= CalculaValor;
-  FAliquotaFInal:= CalculaTributo;
   Memo1.Lines.Add('hello, World.');
   Memo1.Lines.Add('===Método com retorno(Function)');
-  memo1.Lines.Add(lValor.ToString);
-  memo1.Lines.Add(CalculaTributo.ToString);
-  VisualizaMsg;
-end;
-
-function TForm2.CalculaTributo: double;
-begin
-  Result:= FAliquota * 0.1;
 end;
 
 function TForm2.CalculaValor: Integer;
 begin
   Result := FValorTotal + 1;
-end;
-
-function TForm2.SomaValores(aValor1, aValor2: integer): integer;
-begin
-
-end;
-
-procedure TForm2.VisualizaMsg;
-begin
-  ShowMessage('Eai?');
 end;
 
 end.

@@ -12,6 +12,7 @@ type
     Button1: TButton;
     Button2: TButton;
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     FValorTotal: integer;
     FAliquota: double;
@@ -39,10 +40,20 @@ begin
   lValor:= CalculaValor;
   FAliquotaFInal:= CalculaTributo;
   Memo1.Lines.Add('hello, World.');
-  Memo1.Lines.Add('===Método com retorno(Function)');
+  Memo1.Lines.Add('===MÃ©todo com retorno(Function)');
   memo1.Lines.Add(lValor.ToString);
   memo1.Lines.Add(CalculaTributo.ToString);
   VisualizaMsg;
+end;
+
+procedure TForm2.Button2Click(Sender: TObject);
+var
+  lSoma: Integer;
+begin
+  lSoma := SomaValores(5,5);
+  Memo1.Clear;
+  Memo1.Lines.Add('==========soma==========');
+  Memo1.Lines.Add(lSoma.ToString)
 end;
 
 function TForm2.CalculaTributo: double;
@@ -57,7 +68,7 @@ end;
 
 function TForm2.SomaValores(aValor1, aValor2: integer): integer;
 begin
-
+  Result:= aValor1 + aValor2;
 end;
 
 procedure TForm2.VisualizaMsg;
