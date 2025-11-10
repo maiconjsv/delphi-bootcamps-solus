@@ -9,7 +9,9 @@ uses
 type
   TForm2 = class(TForm)
     Button1: TButton;
+    Button2: TButton;
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,6 +31,11 @@ var
 begin
   Retorno:= InputBox('Entrada de dados', 'Informe seu vulgo:', '');
   ShowMessage('Seu nome é ' + Retorno);
+end;
+
+procedure TForm2.Button2Click(Sender: TObject);
+begin
+  MessageDlg('Erro na operação', TMsgDlgType.mtError, [TMsgDlgBtn.mbOK], 0);
 end;
 
 end.
